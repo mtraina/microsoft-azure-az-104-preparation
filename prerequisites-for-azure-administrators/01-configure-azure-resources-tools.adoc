@@ -19,3 +19,15 @@ Get-AzDisk -ResourceGroupName $rgname -Name $diskName
 (Get-AzDisk -ResourceGroupName $rgname -Name $diskName).Sku
 ----
 
+== Use Azure CLI
+https://learn.microsoft.com/en-us/training/modules/configure-azure-resources-tools/6-use-azure-cli
+
+[source, shell]
+----
+LOCATION=$(az group show --name 'az-104-preparation-rg' --query location --out tsv)
+----
+
+TBC
+
+== Summary and resources
+https://learn.microsoft.com/en-us/training/modules/configure-azure-resources-tools/9-summary-resources

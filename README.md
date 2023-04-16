@@ -1,1 +1,1 @@
-# microsoft-azure-az-104-preparation
+# Microsoft Azure AZ-104 Preparation
