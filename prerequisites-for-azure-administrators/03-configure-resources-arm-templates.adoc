@@ -1,0 +1,27 @@
+== Summary and resources
+
+https://learn.microsoft.com/en-us/training/modules/configure-resources-arm-templates/9-summary-resources
+
+=== Explore Azure Resource Manager template structure
+https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure?tabs=azure-cli
+
+[source, shell]
+----
+# Create resource group
+RG_NAME=az-104-preparation-rg
+RG_LOCATION=eastus
+
+az group create \
+  --name $RG_NAME \
+  --location $RG_LOCATION
+
+# Deploy a template to the resource group
+templateFile="./03-configure-resources-arm-templates.json"
+az deployment group create \
+  --name testtemplate \
+  --resource-group $RG_NAME \
+  --template-file $templateFile
+
+# Delete resurce group
+az group delete --name $RG_NAME
+----
