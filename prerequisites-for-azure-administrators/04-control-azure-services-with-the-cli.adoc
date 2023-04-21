@@ -1,0 +1,55 @@
+== Work with the Azure CLI
+
+[source, shell]
+----
+# create resource group
+RG_NAME=az-104-preparation-rg
+RG_LOCATION=eastus
+
+az group create \
+  --name $RG_NAME \
+  --location $RG_LOCATION
+
+# verify
+az group list
+az group list --output table
+----
+
+== Exercise - Create an Azure website using the CLI
+[source, shell]
+----
+# export variables
+export RESOURCE_GROUP=az-104-preparation-rg
+export AZURE_REGION=eastus
+export AZURE_APP_PLAN=popupappplan-$RANDOM
+export AZURE_WEB_APP=popupwebapp-$RANDOM
+
+# verify
+az group list --output table
+az group list --query "[?name == '$RESOURCE_GROUP']"
+
+# create the App service
+az appservice plan create --name $AZURE_APP_PLAN --resource-group $RESOURCE_GROUP --location $AZURE_REGION --sku FREE
+az appservice plan list --output table
+
+# create a web app
+az webapp create --name $AZURE_WEB_APP --resource-group $RESOURCE_GROUP --plan $AZURE_APP_PLAN
+az webapp list --output table
+
+# Make a note of the DefaultHostName listed in the table; this address is the URL for the new website. Azure will make your website available through the unique app name in the azurewebsites.net domain. 
+curl $AZURE_WEB_APP.azurewebsites.net
+----
+
+== Steps to deploy code from GitHub
+
+[source, shell]
+----
+# deploy webapp
+az webapp deployment source config --name $AZURE_WEB_APP --resource-group $RESOURCE_GROUP --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
+
+curl $AZURE_WEB_APP.azurewebsites.net
+# expected output Hello World!
+
+# Delete resurce group
+az group delete --name $RESOURCE_GROUP
+----
