@@ -1,3 +1,5 @@
 == Create management groups
 https://learn.microsoft.com/en-gb/training/modules/configure-azure-policy/2-create-management-groups
 
+== Implement Azure policies
+https://learn.microsoft.com/en-gb/training/modules/configure-azure-policy/3-implement-azure-policies
