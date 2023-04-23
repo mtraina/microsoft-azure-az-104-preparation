@@ -1,0 +1,18 @@
+== Describe Azure Active Directory benefits and features
+
+Azure Active Directory (Azure AD) is Microsoft's multi-tenant cloud-based directory and identity management service. Azure AD helps to support user access to resources and applications, such as:
+
+* Internal resources and apps located on your corporate network.
+* External resources like Microsoft 365, the Azure portal, and SaaS applications.
+* Cloud apps developed for your organization.
+
+https://learn.microsoft.com/en-us/training/modules/configure-azure-active-directory/2-describe-benefits-features
+
+== Describe Azure Active Directory concepts
+https://learn.microsoft.com/en-us/training/modules/configure-azure-active-directory/3-describe-azure-active-directory-concepts
+
+== Compare Active Directory Domain Services to Azure Active Directory
+https://learn.microsoft.com/en-us/training/modules/configure-azure-active-directory/4-compare-active-directory-domain-services
+
+== Implement Azure Active Directory join
+https://learn.microsoft.com/en-us/training/modules/configure-azure-active-directory/6-implement-active-directory-join

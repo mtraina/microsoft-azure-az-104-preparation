@@ -1,0 +1,8 @@
+== Create user accounts
+https://learn.microsoft.com/en-gb/training/modules/configure-user-group-accounts/2-create-user-accounts
+
+== Create group accounts
+https://learn.microsoft.com/en-gb/training/modules/configure-user-group-accounts/5-create
+
+== Create administrative units
+https://learn.microsoft.com/en-gb/training/modules/configure-user-group-accounts/6-create-administrative-units

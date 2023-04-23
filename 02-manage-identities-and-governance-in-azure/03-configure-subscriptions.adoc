@@ -1,0 +1,17 @@
+== Identify Azure regions
+https://learn.microsoft.com/en-gb/training/modules/configure-subscriptions/2-identify-regions
+
+=== Find regions for your business geography
+* https://azure.microsoft.com/global-infrastructure/geographies/#geographies
+* https://azure.microsoft.com/global-infrastructure/services/
+* https://learn.microsoft.com/en-us/azure/best-practices-availability-paired-regions#azure-cross-region-replication-pairings-for-all-geographies
+
+== Implement Azure subscriptions
+https://learn.microsoft.com/en-gb/training/modules/configure-subscriptions/3-implement-azure-subscriptions
+
+== Implement Microsoft Cost Management
+https://learn.microsoft.com/en-gb/training/modules/configure-subscriptions/6-implement-cost-management
+
+== Apply resource tagging
+https://learn.microsoft.com/en-gb/training/modules/configure-subscriptions/7-apply-resource-tagging
+
