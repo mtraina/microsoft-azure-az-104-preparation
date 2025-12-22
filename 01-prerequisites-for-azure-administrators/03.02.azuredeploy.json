@@ -26,5 +26,10 @@
       }
     }
   ],
-  "outputs": {}
+  "outputs": {
+    "storageEndpoint": {
+      "type": "object",
+      "value": "[reference(parameters('storageAccountName')).primaryEndpoints]"
+    }
+  }
 }
