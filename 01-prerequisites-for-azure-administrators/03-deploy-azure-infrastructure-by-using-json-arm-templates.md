@@ -41,38 +41,39 @@ Introduces the purpose of the module and explains why ARM templates are useful f
 
 This unit explains the **core components of an ARM template**, including:
 
-- `$schema`  
-  Defines the JSON schema for template validation
-
-- `contentVersion`  
-  Specifies the version of the template
-
-- `apiProfile`  
-  Defines a collection of API versions for resource type
-
-- `parameters`  
-  Inputs provided at deployment time (e.g., resource name, location)
-
-- `variables`  
-  Values that are used to simplify template language expressions.
-
-- `functions`  
-   U    ser-defined functions that are available within the template - [reference](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/user-defined-functions)
-
-- `resources`  
-  The Azure resources to be deployed
-
-- `output`  
-  Values returned after deployment (e.g., resource IDs)
+| Section            | Purpose                                                           |                        |
+| ------------------ | ----------------------------------------------------------------- | ---------------------- |
+| **$schema**        | Points to the JSON schema that validates the ARM template format. |                        |
+| **contentVersion** | Template version (e.g., “1.0.0.0”).                               |                        |
+| **apiProfile**     | (Optional) A set of API versions to use in deployments.           |                        |
+| **parameters**     | (Optional) Inputs provided at deployment time.                    |                        |
+| **variables**      | (Optional) Reusable values to simplify template expressions.      |                        |
+| **functions**      | (Optional) Custom template functions to reduce repetition.        |                        |
+| **resources**      | **Required** — The Azure resources the template will deploy.      |                        |
+| **outputs**        | (Optional) Values returned after deployment (e.g., resource IDs). |
 
 This structure allows you to describe **what** to deploy, not **how** to deploy it.
 
+```shell
+resourceGroup='testRG'
+location='northeurope'
 
-WIP
+az group create \
+  --name $resourceGroup \
+  --location $location
+
+# Warning: delete rg asynchronously no confirmation needed
+az group delete --name $resourceGroup --yes --no-wait
+```
 
 ---
 
 ### 3. Exercise – Create and Deploy an ARM Template
+Prerequisite: PowerShell extension as documented [here](https://learn.microsoft.com/en-us/powershell/azure/install-azps-macos?view=azps-15.1.0&viewFallbackFrom=azps-14.4.0)
+
+```
+Install-Module -Name Az -Repository PSGallery -Force -Verbose
+```
 
 Hands-on lab where you:
 
@@ -82,6 +83,25 @@ Hands-on lab where you:
   - Azure CLI **or**
   - Azure PowerShell
 - View deployment results in the Azure portal
+
+```powershell
+$resourceGroup='testRG'
+$location='northeurope'
+
+New-AzResourceGroup -Name $resourceGroup -Location $location
+
+Set-AzDefault -ResourceGroupName $resourceGroup
+
+$templateFile="azuredeploy.json"
+$today=Get-Date -Format "MM-dd-yyyy"
+$deploymentName="blanktemplate-"+"$today"
+New-AzResourceGroupDeployment -Name $deploymentName -TemplateFile $templateFile
+
+
+# Warning: delete rg no confirmation needed
+Remove-AzResourceGroup -Name $resourceGroup -Force
+```
+
 
 ---
 
