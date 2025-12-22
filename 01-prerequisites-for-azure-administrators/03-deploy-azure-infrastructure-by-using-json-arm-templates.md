@@ -90,18 +90,24 @@ $location='northeurope'
 
 New-AzResourceGroup -Name $resourceGroup -Location $location
 
-Set-AzDefault -ResourceGroupName $resourceGroup
-
-$templateFile="azuredeploy.json"
+# first deployment, empty resources
+$templateFile="03.01.azuredeploy.json"
 $today=Get-Date -Format "MM-dd-yyyy"
 $deploymentName="blanktemplate-"+"$today"
 New-AzResourceGroupDeployment -Name $deploymentName -TemplateFile $templateFile
 
+# new deployment, adding storage
+$templateFile="03.02.azuredeploy.json"
+$now=Get-Date -Format "yyyy.MM.dd.HH.mm.ss"
+$deploymentName="addstorage-"+"$now"
+$uuid=[guid]::NewGuid().ToString()
+$trimmedId = $uuid[0..7] -join ""
+$storageAccountName="storageaccount"+"$trimmedId"
+New-AzResourceGroupDeployment -Name $deploymentName -TemplateFile $templateFile -storageAccountName $storageAccountName
 
 # Warning: delete rg no confirmation needed
 Remove-AzResourceGroup -Name $resourceGroup -Force
 ```
-
 
 ---
 
