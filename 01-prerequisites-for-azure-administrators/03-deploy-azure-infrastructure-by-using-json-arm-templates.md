@@ -89,6 +89,7 @@ $resourceGroup='testRG'
 $location='northeurope'
 
 New-AzResourceGroup -Name $resourceGroup -Location $location
+Set-AzDefault -ResourceGroupName $resourceGroup
 
 # first deployment, empty resources
 $templateFile="03.01.azuredeploy.json"
