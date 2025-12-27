@@ -156,4 +156,3 @@ This exercise demonstrates creating a virtual machine (VM) in Azure and observin
 3. Confirm by entering `IntroAzureRG` and delete to avoid extra costs.
 
 **Outcome:** You created a VM and observed Azure automatically grouping associated resources in a resource group.
-
