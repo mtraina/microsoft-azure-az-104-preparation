@@ -135,4 +135,3 @@ Azure Application Gateway is ideal when you need:
 - **Load Balancer** → Layer 4, regional, ultra-low latency traffic  
 - **Front Door** → Global, Layer 7, caching, fast failover  
 - **Traffic Manager** → Global, DNS-based routing
-
