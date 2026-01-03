@@ -210,6 +210,9 @@ Understanding access patterns, durability, and availability needs helps manage A
 
 Use the Azure Pricing Calculator to model your storage costs for migration, monthly usage, and future planning.
 
+## 9. Exercise - Provide storage for the public website
+https://microsoftlearning.github.io/Secure-storage-for-Azure-Files-and-Azure-Blob-Storage/Instructions/Labs/LAB_02a_storage_public_website.html
+
 ## 11. Summary and Resources
 
 In this module, you learned about **Azure Blob Storage** and how to configure it. Blob Storage is Microsoft's object storage solution for the cloud, optimized for storing massive amounts of unstructured data such as text or binary files. You explored its features, use cases, and configuration options, including access tiers, lifecycle management, and object replication.
