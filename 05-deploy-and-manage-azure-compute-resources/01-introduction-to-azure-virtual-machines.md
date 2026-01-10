@@ -299,4 +299,3 @@ Azure Backup is a backup-as-a-service solution for both on-premises and cloud da
 4. **Azure Backup VM Extension**: For backing up Azure VMs.
 
 Backups are stored in a **Recovery Services vault** with Azure Storage blobs for efficient, long-term storage. Define backup policies to schedule and retain snapshots.
-
